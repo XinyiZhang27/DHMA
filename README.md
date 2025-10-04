@@ -6,7 +6,6 @@ Four scenarios are simulated with Simulation of Urban MObility (SUMO) (https://s
 The simulated datasets are available at https://drive.google.com/drive/folders/1oXeOSBLP-BjTtyfzmWor61gPqSVROk26?usp=sharing.
 You should download the datasets and build the directory yourself.
 
-
 # File Structure
 * /algorithms: Implementation of UAV and RSU agents.
 * /envs: UAV-assisted multi-edge collaborative computation offloading environment.
@@ -23,11 +22,12 @@ You should download the datasets and build the directory yourself.
    Run data_processing.py to generate the processed data in folder "trajectory_data".  
    Pre-train vehicular trajectory prediction models with main_informer.py. The pre-trained prediction models are saved in folder "checkpoints".
 4. In file main.py:  
-   Set "--stage" to "train" and run main.py to train MCMA.  
-   Note that "--simulation_scenario", "--time_range", and "--num_edge" need to be modified according to different scenarios.
+   Set "--stage" to "train" and run main.py to train DHMA.
+   Set the training episodes with "--train_start_epi" and "--train_end_epi"  
+   Note that "--simulation_scenario", "--time_range", "--num_edge", "--num_uav", "--cpu_uav", "--core_uav", "--cpu_rsu", "--core_rsu", and "--trans_rate_edge" need to be modified according to different scenarios.
 
-# Model Training
+# Model Test
 In file main.py:  
-Set "--stage" to "train" and run main.py to test MCMA.  
-Note that "--model_dir1" and "--model_dir2" should be filled with the paths of the trained UAV and RSU models, respectively.  
-Set the test episodes with "start_epi" and "end_epi".
+Set "--stage" to "test" and run main.py to test DHMA.
+Note that "--run_num0" and "--run_num1" should be filled with the run nums of the trained UAV and RSU models, respectively.  
+Set the test episodes with "--test_start_epi" and "--test_end_epi".
